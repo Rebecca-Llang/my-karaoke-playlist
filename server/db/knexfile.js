@@ -11,6 +11,14 @@ export default {
     connection: {
       filename: Path.join(__dirname, 'dev.sqlite3'),
     },
+    // migration and seed paths added
+    migrations: {
+      directory: Path.join(__dirname, 'migrations'),
+    },
+    seeds: {
+      directory: Path.join(__dirname, 'seeds'),
+    },
+
     pool: {
       afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb),
     },
