@@ -26,6 +26,7 @@ export function deleteSong(id: number) {
   return db('songs').where({ id }).del()
 }
 
+// MAY NEED TO CHANGE - NEED HELP HERE
 //updateGenre(id) for db route
 export function updateGenre(id: number, newGenre: string) {
   return db('songs').where({ id }).select('genre').update('genre', newGenre)
