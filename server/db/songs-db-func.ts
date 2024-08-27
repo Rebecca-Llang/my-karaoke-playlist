@@ -16,12 +16,17 @@ export function getSongById(id: number): Promise<Song> {
     .first() //will only return one Song object and not a array of songs
 }
 
+// addSong(newSong) for db route
+export function addSong(newSong: Song) {
+  return db('songs').insert(newSong)
+}
+
 // deleteSong(id) for db route
 export function deleteSong(id: number) {
   return db('songs').where({ id }).del()
 }
 
-// addSong(newSong) for db route
-export function addSong(newSong: Song) {
-  return db('songs').insert(newSong)
+//updateGenre(id) for db route
+export function updateGenre(id: number, newGenre: string) {
+  return db('songs').where({ id }).select('genre').update('genre', newGenre)
 }
