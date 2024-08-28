@@ -1,11 +1,19 @@
 export interface Song {
-  id?: number
+  id: number
   title: string
   artist: string
   genre: string
   decade: number
 }
 
+//add NewSong interface w/o id and change componants
+
+export interface NewSong {
+  title: string
+  artist: string
+  genre: string
+  decade: number
+}
 // export interface Songs {
 //   id: number
 //   songId: number

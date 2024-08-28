@@ -1,5 +1,5 @@
 import connection from './connection'
-import { Song } from '../../models/songs'
+import { NewSong, Song } from '../../models/songs'
 
 const db = connection
 
@@ -17,7 +17,7 @@ export function getSongById(id: number): Promise<Song> {
 }
 
 // addSong(newSong) for db route
-export function addSong(newSong: Song) {
+export function addSong(newSong: NewSong) {
   return db('songs').insert(newSong)
 }
 

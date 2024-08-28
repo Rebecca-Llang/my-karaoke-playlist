@@ -1,4 +1,5 @@
 import Songs from './Songs.tsx'
+import Song from './SongDetails.tsx'
 
 function App() {
   return (

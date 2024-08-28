@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { Song } from '../../models/songs'
+import { NewSong } from '../../models/songs'
 import { addSong } from '../apis/songsAPI'
 
 function AddSong() {
@@ -16,7 +16,7 @@ function AddSong() {
   const queryClient = useQueryClient()
 
   const addMutation = useMutation({
-    mutationFn: async (newSong: Song) => addSong(newSong),
+    mutationFn: async (newSong: NewSong) => addSong(newSong),
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['songs'] })

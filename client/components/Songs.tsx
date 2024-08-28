@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getAllSongs } from '../apis/songsAPI'
 import AddSong from './AddSong'
+import Song from './Song'
 
 function Songs() {
   const { data, isPending, isError, error } = useQuery({
@@ -22,7 +23,14 @@ function Songs() {
       <h1>Songs:</h1>
       <ul>
         {data.map((song) => (
-          <li key={song.id}>{`${song.title} by ${song.artist}`}</li>
+          <Song
+            key={song.id}
+            id={song.id}
+            title={song.title}
+            artist={song.artist}
+            genre={song.genre}
+            decade={song.decade}
+          />
         ))}
       </ul>
 

@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { Song } from '../../models/songs.ts'
+import { NewSong, Song } from '../../models/songs.ts'
 
 // GET allSongs /api/v1/songs
 
@@ -19,7 +19,7 @@ export async function getSongById(id: number) {
 
 // POST addSong(newSong) /api/v1/songs
 
-export async function addSong(newSong: Song) {
+export async function addSong(newSong: NewSong) {
   const result = await request.post('/api/v1/songs').send(newSong)
   console.log(result.statusCode)
   return
