@@ -34,16 +34,9 @@ function AddSong() {
     setNewSong(newSongObj)
   }
 
-  // setFormValues makes shallow copy & add's new values to the array
-  //   setFormValues((previous) => ({
-  //     ...previous,
-  //     [name]: value,
-  //   }))
-  // }
-
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
-    await addMutation.mutate(newSong)
+    addMutation.mutate(newSong)
   }
 
   return (

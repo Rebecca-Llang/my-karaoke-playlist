@@ -37,7 +37,7 @@ export async function deleteSong(id: number) {
 //UPDATE updateGenre(id, newGenre)
 
 export async function updateGenre(id: number, newGenre: string) {
-  const result = await request.patch(`/api/v1/songs/${id}`)
+  const result = await request.patch(`/api/v1/songs/${id}`).send(newGenre)
   console.log(result.statusCode)
   return
 }
