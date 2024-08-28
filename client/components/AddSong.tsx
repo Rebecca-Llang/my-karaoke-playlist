@@ -5,6 +5,7 @@ import { addSong } from '../apis/songsAPI'
 
 function AddSong() {
   // declare state for setting new song, set initial data object
+
   // newSong can also be the destructed data {title, artist, genre, decade}
   const [newSong, setNewSong] = useState({
     title: '',
@@ -43,8 +44,9 @@ function AddSong() {
     <>
       <form className="form" onSubmit={handleSubmit} aria-label="Add song">
         <div>
-          <label htmlFor="title">Song Title</label>
+          <label htmlFor="title">Song Title : </label>
           <input
+            autoFocus
             className="form__input"
             type="text"
             name="title"
@@ -54,7 +56,7 @@ function AddSong() {
           />
         </div>
         <div>
-          <label htmlFor="artist">Artist Name</label>
+          <label htmlFor="artist">Artist Name : </label>
           <input
             className="form__input"
             type="text"
@@ -65,7 +67,7 @@ function AddSong() {
           />
         </div>
         <div>
-          <label htmlFor="genre">Genre</label>
+          <label htmlFor="genre">Genre : </label>
           <input
             className="form__input"
             type="text"
@@ -76,7 +78,7 @@ function AddSong() {
           />
         </div>
         <div>
-          <label htmlFor="artist">Decade</label>
+          <label htmlFor="decade">Decade : </label>
           <input
             className="form__input"
             type="text"

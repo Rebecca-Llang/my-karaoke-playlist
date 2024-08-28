@@ -7,7 +7,7 @@ import songsRoutes from './routes/songs-routes.ts'
 const server = express()
 server.use(express.json())
 
-// ADD YOUR API ROUTES HERE
+// API ROUTES
 server.use('/api/v1/songs', songsRoutes)
 
 if (process.env.NODE_ENV === 'production') {

@@ -20,7 +20,10 @@ function Songs() {
 
   return (
     <>
-      <h1>Songs:</h1>
+      <h1>Add new Song</h1>
+      <AddSong />
+
+      <h2>My Songs Playlist:</h2>
       <ul>
         {data.map((song) => (
           <Song
@@ -33,9 +36,6 @@ function Songs() {
           />
         ))}
       </ul>
-
-      <h2>Add new Song</h2>
-      <AddSong />
     </>
   )
 }
