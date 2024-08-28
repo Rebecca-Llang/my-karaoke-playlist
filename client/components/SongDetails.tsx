@@ -1,5 +1,7 @@
+import DeleteSong from './DeleteSong'
+
 interface Props {
-  id?: number
+  id: number
   title: string
   artist: string
   genre: string
@@ -17,7 +19,8 @@ function SongDetails({ id, title, artist, genre, decade }: Props) {
         <li>{genre}</li>
         <li>{decade}</li>
       </ul>
-      {/* <DeleteSong deleteId={{ id }} /> */}
+
+      <DeleteSong deleteId={id} />
     </>
   )
 }
