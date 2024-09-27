@@ -1,3 +1,7 @@
+# My Karaoke Playlist App
+
+This app allows you to add, delete and store karaoke songs to prepare for your next karaoke adventure!
+
 # Fullstack Collection App
 
 This repo is designed to provide space to code a fullstack app. It contains node modules and folders for databases, routes, API requests and React components that'll use React Query. Let's get going!
