@@ -54,9 +54,10 @@ router.delete('/:id', async (req, res) => {
 //PATCH updateGenre(id, newGenre) /api/v1/songs/:id
 router.patch('/:id', async (req, res) => {
   const id = Number(req.params.id)
-  const newGenre = req.body.genre
+  const { genre } = req.body
+  console.log(genre)
   try {
-    await db.updateGenre(id, newGenre)
+    await db.updateGenre(id, genre)
     res.sendStatus(200)
   } catch (error) {
     console.error(`database error: ${error}`)
