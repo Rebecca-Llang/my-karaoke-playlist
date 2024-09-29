@@ -50,13 +50,14 @@ h3 {
 }
 
 .button-secondary {
-  background-color: #2a4494;
+  background-color: #10626d;
   color: aliceblue;
   padding: 10px;
   margin-top: 20px;
-  margin-left: 45%;
+  /* margin-left: 45%; */
   border-radius: 50px;
   border: #a5efed;
+  align-self: center;
 }
 .addSong {
   display: flex;
@@ -125,6 +126,13 @@ select {
   margin: 20px;
   margin-top: 20px;
   min-width: 500px;
+}
+
+.songDetailsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .songDetails {

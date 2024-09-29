@@ -1,5 +1,3 @@
-// prop is deleteSong
-
 import { deleteSong } from '../apis/songsAPI'
 import { Song } from '../../models/songs'
 
