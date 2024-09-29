@@ -2,16 +2,14 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { NewSong } from '../../models/songs'
 import { addSong } from '../apis/songsAPI'
+import SelectDecade from './SelectDecade'
 
 function AddSong() {
-  // declare state for setting new song, set initial data object
-
-  // newSong can also be the destructed data {title, artist, genre, decade}
-  const [newSong, setNewSong] = useState({
+  const [newSong, setNewSong] = useState<NewSong>({
     title: '',
     artist: '',
     genre: '',
-    decade: 2000,
+    decade: null,
   })
 
   const queryClient = useQueryClient()
@@ -35,6 +33,10 @@ function AddSong() {
     setNewSong(newSongObj)
   }
 
+  const handleDecadeSubmit = (decade: number) => {
+    setNewSong({ ...newSong, decade })
+  }
+
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
     addMutation.mutate(newSong)
@@ -42,57 +44,63 @@ function AddSong() {
 
   return (
     <>
-      <form className="form" onSubmit={handleSubmit} aria-label="Add song">
-        <div>
-          <label htmlFor="title">Song Title : </label>
-          <input
-            autoFocus
-            className="form__input"
-            type="text"
-            name="title"
-            id="title"
-            value={newSong.title}
-            onChange={onChangeHandle}
-          />
-        </div>
-        <div>
-          <label htmlFor="artist">Artist Name : </label>
-          <input
-            className="form__input"
-            type="text"
-            name="artist"
-            id="artist"
-            value={newSong.artist}
-            onChange={onChangeHandle}
-          />
-        </div>
-        <div>
-          <label htmlFor="genre">Genre : </label>
-          <input
-            className="form__input"
-            type="text"
-            name="genre"
-            id="genre"
-            value={newSong.genre}
-            onChange={onChangeHandle}
-          />
-        </div>
-        <div>
-          <label htmlFor="decade">Decade : </label>
-          <input
-            className="form__input"
-            type="text"
-            name="decade"
-            id="decade"
-            value={newSong.decade}
-            onChange={onChangeHandle}
-          />
-        </div>
+      <h2>Add a new song to your playlist:</h2>
+      <div className="addSong">
+        <form className="form" onSubmit={handleSubmit} aria-label="Add song">
+          <div>
+            <label htmlFor="title">Song Title: </label>
+            <input
+              autoFocus
+              className="form__input"
+              type="text"
+              name="title"
+              id="title"
+              value={newSong.title}
+              onChange={onChangeHandle}
+            />
+          </div>
+          <div>
+            <label htmlFor="artist">Artist Name: </label>
+            <input
+              className="form__input"
+              type="text"
+              name="artist"
+              id="artist"
+              value={newSong.artist}
+              onChange={onChangeHandle}
+            />
+          </div>
+          <div>
+            <label htmlFor="genre">Genre: </label>
+            <input
+              className="form__input"
+              type="text"
+              name="genre"
+              id="genre"
+              value={newSong.genre}
+              onChange={onChangeHandle}
+            />
+          </div>
+          <label htmlFor="decade">Decade: </label>
+          <SelectDecade onSelect={handleDecadeSubmit} />
 
-        <button type="submit" className="button-primary">
-          Add Song
-        </button>
-      </form>
+          {/* <div>
+            <label htmlFor="decade">Decade: </label>
+            <select
+              className="form__input"
+              type="text"
+              name="decade"
+              id="decade"
+              value={newSong.decade}
+              onChange={onChangeHandle}
+            />
+          </div> */}
+
+          <button type="submit" className="button-primary">
+            Add Song
+          </button>
+        </form>
+      </div>
     </>
   )
 }

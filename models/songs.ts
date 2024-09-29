@@ -10,5 +10,5 @@ export interface NewSong {
   title: string
   artist: string
   genre: string
-  decade: number
+  decade: number | null
 }

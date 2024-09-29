@@ -20,22 +20,22 @@ function Songs() {
 
   return (
     <>
-      <h1>Add new Song</h1>
       <AddSong />
-
-      <h2>My Songs Playlist:</h2>
-      <ul>
-        {data.map((song) => (
-          <Song
-            key={song.id}
-            id={song.id}
-            title={song.title}
-            artist={song.artist}
-            genre={song.genre}
-            decade={song.decade}
-          />
-        ))}
-      </ul>
+      <div className="songsPlaylist">
+        <h2>My Songs Playlist:</h2>
+        <ul>
+          {data.map((song) => (
+            <Song
+              key={song.id}
+              id={song.id}
+              title={song.title}
+              artist={song.artist}
+              genre={song.genre}
+              decade={song.decade}
+            />
+          ))}
+        </ul>
+      </div>
     </>
   )
 }

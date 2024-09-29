@@ -3,6 +3,76 @@ body {
   top: 0;
   left: 0;
   margin: 0;
-  padding: 20px;
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 100%;
+  font:
+    14px 'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+header {
+  background-color: #2a4494;
+  width: 100%;
+  height: 150px;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+  color: #a5efed;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.button-primary {
+  background-color: #2a4494;
+  color: aliceblue;
+  padding: 10px;
+  margin-top: 20px;
+  align-self: center;
+  border-radius: 50px;
+  border: #a5efed;
+}
+.addSong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #a5efed;
+  max-width: 50%;
+  min-height: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  min-width: 60%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+label {
+  display: table-cell;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+input {
+  display: table-cell;
+  width: 100%;
 }
