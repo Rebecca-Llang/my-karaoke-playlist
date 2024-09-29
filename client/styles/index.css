@@ -32,12 +32,29 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: 1.7rem;
+  align-items: center;
+  text-align: center;
+  color: aliceblue;
+}
+
 .button-primary {
   background-color: #2a4494;
   color: aliceblue;
   padding: 15px;
   margin-top: 20px;
   align-self: center;
+  border-radius: 50px;
+  border: #a5efed;
+}
+
+.button-secondary {
+  background-color: #2a4494;
+  color: aliceblue;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 45%;
   border-radius: 50px;
   border: #a5efed;
 }
@@ -48,7 +65,7 @@ h2 {
   padding: 10px;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #a5efed;
+  background-color: #cff1f0;
   max-width: 50%;
   min-height: 300px;
   margin-top: 10px;
@@ -80,4 +97,41 @@ input {
 select {
   min-width: 100%;
   padding: 3px;
+}
+
+.songsPlaylist {
+  background-color: #2a4494;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.songList {
+  background-color: #cff1f0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+  list-style: none;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.song {
+  background-color: white;
+  padding: 50px;
+  border-radius: 40px;
+  margin: 20px;
+  margin-top: 20px;
+  min-width: 500px;
+}
+
+.songDetails {
+  list-style: none;
+  padding: 10px;
+}
+
+.title {
+  font-size: 1rem;
 }

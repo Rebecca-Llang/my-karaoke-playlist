@@ -34,7 +34,7 @@ export default function UpdateGenre({ songId, newGenre }: Props) {
           />
         </div>
         <button type="submit" className="button-primary">
-          Update
+          Update Genre
         </button>
       </form>
     </>

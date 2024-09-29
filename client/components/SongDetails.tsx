@@ -12,13 +12,11 @@ interface Props {
 function SongDetails({ id, title, artist, genre, decade }: Props) {
   return (
     <>
-      <p>Song details: </p>
-
       <ul>
-        <li>{title}</li>
-        <li>{artist}</li>
-        <li>{genre}</li>
-        <li>{decade}</li>
+        <li className="songDetails">Title: {title}</li>
+        <li className="songDetails">Artist: {artist}</li>
+        <li className="songDetails">Genre: {genre}</li>
+        <li className="songDetails">Decade: {decade}</li>
       </ul>
 
       <DeleteSong deleteId={id} />
