@@ -18,13 +18,20 @@ export default function SelectDecade({ onSelect }: SelectDecadeProps) {
   }
 
   return (
-    <select onChange={onDecadeSelectHandler} value={decade ?? ''}>
-      <option value="" disabled>
-        Select Decade
-      </option>
-      {options.map((option, index) => {
-        return <option key={index}>{option}</option>
-      })}
-    </select>
+    <>
+      <select
+        id="decade"
+        className="select"
+        onChange={onDecadeSelectHandler}
+        value={decade ?? ''}
+      >
+        <option value="" disabled>
+          Select Decade
+        </option>
+        {options.map((option, index) => {
+          return <option key={index}>{option}</option>
+        })}
+      </select>
+    </>
   )
 }

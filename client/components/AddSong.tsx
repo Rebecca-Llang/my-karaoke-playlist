@@ -23,11 +23,9 @@ function AddSong() {
   })
 
   const onChangeHandle = (event: ChangeEvent<HTMLInputElement>) => {
-    //  const { name, value } = evt.currentTarget
     const key = event.target.id
     const value = event.target.value
 
-    // returns newSong obj, key as id and value as input
     const newSongObj = { ...newSong, [key]: value }
 
     setNewSong(newSongObj)
@@ -44,7 +42,7 @@ function AddSong() {
 
   return (
     <>
-      <h2>Add a new song to your playlist:</h2>
+      <h2>Add A New Song</h2>
       <div className="addSong">
         <form className="form" onSubmit={handleSubmit} aria-label="Add song">
           <div>
@@ -57,6 +55,7 @@ function AddSong() {
               id="title"
               value={newSong.title}
               onChange={onChangeHandle}
+              placeholder="Like a Prayer"
             />
           </div>
           <div>
@@ -68,6 +67,7 @@ function AddSong() {
               id="artist"
               value={newSong.artist}
               onChange={onChangeHandle}
+              placeholder="Madonna"
             />
           </div>
           <div>
@@ -79,25 +79,15 @@ function AddSong() {
               id="genre"
               value={newSong.genre}
               onChange={onChangeHandle}
+              placeholder="Pop Rock"
             />
           </div>
-          <label htmlFor="decade">Decade: </label>
-          <SelectDecade onSelect={handleDecadeSubmit} />
-
-          {/* <div>
+          <div>
             <label htmlFor="decade">Decade: </label>
-            <select
-              className="form__input"
-              type="text"
-              name="decade"
-              id="decade"
-              value={newSong.decade}
-              onChange={onChangeHandle}
-            />
-          </div> */}
-
+            <SelectDecade onSelect={handleDecadeSubmit} />
+          </div>
           <button type="submit" className="button-primary">
-            Add Song
+            Add To My Playlist
           </button>
         </form>
       </div>
