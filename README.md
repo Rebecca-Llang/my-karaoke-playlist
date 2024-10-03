@@ -15,3 +15,21 @@ Database: SQLite3 via Knex for database management
 ## Future Plans 💃
 - Add unit testing
 - Allow users to categorise songs by decade and genre
+
+## Setup ✅
+
+To get started with the project, follow these instructions:
+
+#### **From the GitHub UI**
+
+See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use GitHub's feature to create a new repo from a template.
+
+#### **From the command line**
+
+```bash
+git clone https://github.com/[your-username]/my-karaoke-playlist 
+cd my-karaoke-playlist
+npm install # to install dependencies
+npm run dev # to start the dev server
+```
+You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
