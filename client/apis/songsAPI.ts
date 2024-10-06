@@ -33,7 +33,6 @@ export async function deleteSong(id: number) {
   return
 }
 
-// NEED HELP HERE
 //UPDATE updateGenre(id, newGenre)
 
 export async function updateGenre(id: number, newGenre: string) {

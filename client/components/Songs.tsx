@@ -20,7 +20,7 @@ function Songs() {
   return (
     <>
       <div className="songsPlaylist">
-        <h3>My Songs Playlist:</h3>
+        <h3 id="songsPlaylist">My Songs:</h3>
         <ul className="songList">
           {data.map((song) => (
             <Song

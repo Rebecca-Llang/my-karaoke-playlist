@@ -11,6 +11,19 @@ body {
     sans-serif;
 }
 
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.navLinks {
+  color: #a5efed;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
 header {
   background-color: #2a4494;
   width: 100%;
@@ -18,7 +31,14 @@ header {
   align-items: center;
   text-align: center;
   padding-top: 60px;
-  color: #a5efed;
+  text-decoration: none !important;
+}
+
+header h1 {
+  color: aliceblue;
+  text-decoration: none !important;
+  font-size: 2.5rem !important;
+  margin-top: 0 !important;
 }
 
 h1 {
@@ -103,9 +123,11 @@ select {
 .songsPlaylist {
   background-color: #2a4494;
   padding: 10px;
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .songList {

@@ -24,7 +24,11 @@ function DeleteSong({ deleteId }: Props) {
 
   return (
     <>
-      <button onClick={handleClick} className="button-secondary">
+      <button
+        onClick={handleClick}
+        className="button-secondary"
+        id="deleteSong"
+      >
         Delete Song
       </button>
     </>

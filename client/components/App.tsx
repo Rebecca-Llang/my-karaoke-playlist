@@ -1,6 +1,6 @@
-import AddSong from './AddSong.tsx'
+import { Outlet } from 'react-router-dom'
+
 import NavBar from './NavBar.tsx'
-import Songs from './Songs.tsx'
 
 function App() {
   return (
@@ -9,8 +9,7 @@ function App() {
         <NavBar />
       </header>
       <section className="main">
-        <AddSong />
-        <Songs />
+        <Outlet />
       </section>
     </>
   )
