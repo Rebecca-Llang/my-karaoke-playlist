@@ -14,7 +14,7 @@ function Songs() {
 
   if (isError) {
     console.error(error.message)
-    return <p>Error...</p>
+    return <p>Oh no! Error...</p>
   }
 
   return (

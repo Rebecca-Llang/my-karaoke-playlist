@@ -103,6 +103,13 @@ form {
   border-radius: 10px;
 }
 
+.addSongSubmitMessage {
+  color: black;
+  padding: 15px;
+  margin-top: 20px;
+  align-self: center;
+}
+
 label {
   display: table-cell;
   width: 100%;

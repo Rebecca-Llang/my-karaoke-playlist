@@ -10,7 +10,7 @@ export default function NavBar() {
       </div>
       <div>
         <NavLink to="/songs" className="navLinks">
-          My Playlist
+          <p>View My Playlist</p>
         </NavLink>
       </div>
     </>

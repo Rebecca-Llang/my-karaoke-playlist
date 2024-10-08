@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { NewSong } from '../../models/songs'
 import { addSong } from '../apis/songsAPI'
 import SelectDecade from './SelectDecade'
@@ -12,15 +12,37 @@ function AddSong() {
     decade: null,
   })
 
+  const [showSubmitMsg, setShowSubmitMsg] = useState(false)
+
   const queryClient = useQueryClient()
 
   const addMutation = useMutation({
+    mutationKey: ['addSong'],
     mutationFn: async (newSong: NewSong) => addSong(newSong),
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['songs'] })
+      setShowSubmitMsg(true)
+
+      setNewSong({
+        title: '',
+        artist: '',
+        genre: '',
+        decade: null,
+      })
     },
   })
+
+  useEffect(() => {
+    if (showSubmitMsg) {
+      const timer = setTimeout(() => {
+        console.log('submit', showSubmitMsg)
+        setShowSubmitMsg(false)
+      }, 7000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [showSubmitMsg])
 
   const onChangeHandle = (event: ChangeEvent<HTMLInputElement>) => {
     const key = event.target.id
@@ -40,9 +62,18 @@ function AddSong() {
     addMutation.mutate(newSong)
   }
 
+  if (addMutation.isPending) {
+    return <p>Adding Song...</p>
+  }
+
+  if (addMutation.isError) {
+    return <p>Oh no! Error adding song: {addMutation.error.message}</p>
+  }
+
   return (
     <>
       <h2>Add A New Song</h2>
+
       <div className="addSong">
         <form className="form" onSubmit={handleSubmit} aria-label="Add song">
           <div>
@@ -86,9 +117,18 @@ function AddSong() {
             <label htmlFor="decade">Decade: </label>
             <SelectDecade onSelect={handleDecadeSubmit} />
           </div>
-          <button type="submit" className="button-primary">
-            Add To My Playlist
+          <button
+            type="submit"
+            className="button-primary"
+            disabled={addMutation.isPending}
+          >
+            {addMutation.isPending ? 'Adding...' : 'Add to My Playlist'}
           </button>
+          {showSubmitMsg && (
+            <div className="addSongSubmitMessage">
+              <p>Song has been added to Playlist!</p>
+            </div>
+          )}
         </form>
       </div>
     </>
