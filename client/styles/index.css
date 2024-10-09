@@ -59,6 +59,11 @@ h3 {
   color: aliceblue;
 }
 
+h4 {
+  color: #a5efed;
+  font-size: 1.3rem;
+}
+
 .button-primary {
   background-color: #2a4494;
   color: aliceblue;
@@ -110,6 +115,13 @@ form {
   align-self: center;
 }
 
+.noResultMsg {
+  color: black;
+  padding: 15px;
+  margin-top: 20px;
+  align-self: center;
+}
+
 label {
   display: table-cell;
   width: 100%;
@@ -136,6 +148,9 @@ select {
   border-radius: 10px;
 }
 
+.filters {
+  background-color: #0d2673;
+}
 .songList {
   background-color: #cff1f0;
   display: flex;

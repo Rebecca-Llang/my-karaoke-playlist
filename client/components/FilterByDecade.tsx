@@ -12,8 +12,6 @@ export default function FilterByDecade({ onDecadeChange, data }: Props) {
 
   const decadesArr = [...decades]
 
-  console.log('decades', decades)
-  console.log('decades arr', decadesArr)
   return (
     <>
       <label htmlFor="decadeFilter">
