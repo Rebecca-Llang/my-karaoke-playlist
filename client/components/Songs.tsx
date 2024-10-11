@@ -50,17 +50,22 @@ function Songs() {
       <div className="songsPlaylist">
         <h3 id="songsPlaylist">My Songs:</h3>
         <div className="filters">
-          <h4>Filter By Decade:</h4>
-          <FilterByDecade
-            data={data}
-            onDecadeChange={(decade) => setSelectedDecade(decade)}
-          />
-
-          <FilterByGenre
-            data={data}
-            onGenreChange={(genre) => setSelectedGenre(genre)}
-          />
+          <div className="filter">
+            <h4>Filter By Decade:</h4>
+            <FilterByDecade
+              data={data}
+              onDecadeChange={(decade) => setSelectedDecade(decade)}
+            />
+          </div>
+          <div className="filter">
+            <h4>Filter By Genre:</h4>
+            <FilterByGenre
+              data={data}
+              onGenreChange={(genre) => setSelectedGenre(genre)}
+            />
+          </div>
         </div>
+
         {showNoResultMsg ? (
           <p>No songs match your filter preference</p>
         ) : (
