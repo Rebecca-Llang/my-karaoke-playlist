@@ -48,9 +48,7 @@ function Songs() {
   return (
     <>
       <div className="songsPlaylist">
-        <h2 className="headingPlaylist" id="songsPlaylist">
-          My Songs:
-        </h2>
+        <h2 id="songsPlaylist">My Songs:</h2>
         <div className="filters">
           <div className="filter">
             <h3>Filter By Decade:</h3>

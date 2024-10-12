@@ -72,63 +72,65 @@ function AddSong() {
 
   return (
     <>
-      <h2>Add A New Song</h2>
+      <div className="addSongContainer">
+        <h2>Add A New Song</h2>
 
-      <div className="addSong">
-        <form className="form" onSubmit={handleSubmit} aria-label="Add song">
-          <div className="addSongForm">
-            <label htmlFor="title">Song Title: </label>
-            <input
-              className="form__input"
-              type="text"
-              name="title"
-              id="title"
-              value={newSong.title}
-              onChange={onChangeHandle}
-              placeholder="Like a Prayer"
-            />
-          </div>
-          <div className="addSongForm">
-            <label htmlFor="artist">Artist Name: </label>
-            <input
-              className="form__input"
-              type="text"
-              name="artist"
-              id="artist"
-              value={newSong.artist}
-              onChange={onChangeHandle}
-              placeholder="Madonna"
-            />
-          </div>
-          <div className="addSongForm">
-            <label htmlFor="genre">Genre: </label>
-            <input
-              className="form__input"
-              type="text"
-              name="genre"
-              id="genre"
-              value={newSong.genre}
-              onChange={onChangeHandle}
-              placeholder="Pop Rock"
-            />
-          </div>
-          <div className="addSongForm">
-            <label htmlFor="decade">Decade: </label>
-            <SelectDecade onSelect={handleDecadeSubmit} />
-          </div>
-          <button
-            type="submit"
-            className="button-primary addSongForm"
-            disabled={addMutation.isPending}
-          >
-            {addMutation.isPending ? 'Adding...' : 'Add to My Playlist'}
-          </button>
-          {showSubmitMsg && (
-            <div className="addSongSubmitMessage">
-              <p>Song has been added to Playlist!</p>
+        <div className="addSong">
+          <form className="form" onSubmit={handleSubmit} aria-label="Add song">
+            <div className="addSongForm">
+              <label htmlFor="title">Song Title: </label>
+              <input
+                className="form__input"
+                type="text"
+                name="title"
+                id="title"
+                value={newSong.title}
+                onChange={onChangeHandle}
+                placeholder="Like a Prayer"
+              />
             </div>
-          )}
-        </form>
+            <div className="addSongForm">
+              <label htmlFor="artist">Artist Name: </label>
+              <input
+                className="form__input"
+                type="text"
+                name="artist"
+                id="artist"
+                value={newSong.artist}
+                onChange={onChangeHandle}
+                placeholder="Madonna"
+              />
+            </div>
+            <div className="addSongForm">
+              <label htmlFor="genre">Genre: </label>
+              <input
+                className="form__input"
+                type="text"
+                name="genre"
+                id="genre"
+                value={newSong.genre}
+                onChange={onChangeHandle}
+                placeholder="Pop Rock"
+              />
+            </div>
+            <div className="addSongForm">
+              <label htmlFor="decade">Decade: </label>
+              <SelectDecade onSelect={handleDecadeSubmit} />
+            </div>
+            <button
+              type="submit"
+              className="button-primary addSongForm"
+              disabled={addMutation.isPending}
+            >
+              {addMutation.isPending ? 'Adding...' : 'Add to My Playlist'}
+            </button>
+            {showSubmitMsg && (
+              <div className="addSongSubmitMessage">
+                <p>Song has been added to Playlist!</p>
+              </div>
+            )}
+          </form>
+        </div>
       </div>
     </>
   )
