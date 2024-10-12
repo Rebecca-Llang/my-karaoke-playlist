@@ -76,10 +76,9 @@ function AddSong() {
 
       <div className="addSong">
         <form className="form" onSubmit={handleSubmit} aria-label="Add song">
-          <div>
+          <div className="addSongForm">
             <label htmlFor="title">Song Title: </label>
             <input
-              autoFocus
               className="form__input"
               type="text"
               name="title"
@@ -89,7 +88,7 @@ function AddSong() {
               placeholder="Like a Prayer"
             />
           </div>
-          <div>
+          <div className="addSongForm">
             <label htmlFor="artist">Artist Name: </label>
             <input
               className="form__input"
@@ -101,7 +100,7 @@ function AddSong() {
               placeholder="Madonna"
             />
           </div>
-          <div>
+          <div className="addSongForm">
             <label htmlFor="genre">Genre: </label>
             <input
               className="form__input"
@@ -113,13 +112,13 @@ function AddSong() {
               placeholder="Pop Rock"
             />
           </div>
-          <div>
+          <div className="addSongForm">
             <label htmlFor="decade">Decade: </label>
             <SelectDecade onSelect={handleDecadeSubmit} />
           </div>
           <button
             type="submit"
-            className="button-primary"
+            className="button-primary addSongForm"
             disabled={addMutation.isPending}
           >
             {addMutation.isPending ? 'Adding...' : 'Add to My Playlist'}

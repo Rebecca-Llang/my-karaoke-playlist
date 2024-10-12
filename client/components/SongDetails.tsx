@@ -13,10 +13,18 @@ function SongDetails({ id, title, artist, genre, decade }: Props) {
   return (
     <>
       <ul className="songDetailsBox">
-        <li className="songDetails">Title: {title}</li>
-        <li className="songDetails">Artist: {artist}</li>
-        <li className="songDetails">Genre: {genre}</li>
-        <li className="songDetails">Decade: {decade}</li>
+        <li className="songDetails">
+          <span className="bold-p">Title:</span> {title}
+        </li>
+        <li className="songDetails">
+          <span className="bold-p">Artist:</span> {artist}
+        </li>
+        <li className="songDetails">
+          <span className="bold-p">Genre:</span> {genre}
+        </li>
+        <li className="songDetails">
+          <span className="bold-p">Decade:</span> {decade}
+        </li>
       </ul>
 
       <UpdateGenre songId={id} newGenre={genre} />

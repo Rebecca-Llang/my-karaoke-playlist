@@ -48,17 +48,19 @@ function Songs() {
   return (
     <>
       <div className="songsPlaylist">
-        <h3 id="songsPlaylist">My Songs:</h3>
+        <h2 className="headingPlaylist" id="songsPlaylist">
+          My Songs:
+        </h2>
         <div className="filters">
           <div className="filter">
-            <h4>Filter By Decade:</h4>
+            <h3>Filter By Decade:</h3>
             <FilterByDecade
               data={data}
               onDecadeChange={(decade) => setSelectedDecade(decade)}
             />
           </div>
           <div className="filter">
-            <h4>Filter By Genre:</h4>
+            <h3>Filter By Genre:</h3>
             <FilterByGenre
               data={data}
               onGenreChange={(genre) => setSelectedGenre(genre)}
@@ -67,7 +69,7 @@ function Songs() {
         </div>
 
         {showNoResultMsg ? (
-          <p>No songs match your filter preference</p>
+          <p className="noResultMsg"> No songs match your filter preference</p>
         ) : (
           <ul className="songList">
             {filteredResult.map((song) => (

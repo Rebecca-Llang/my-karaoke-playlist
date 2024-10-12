@@ -4,11 +4,8 @@ body {
   left: 0;
   margin: 0;
   width: 100%;
-  font:
-    14px 'Helvetica Neue',
-    Helvetica,
-    Arial,
-    sans-serif;
+  font: 0.875rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 a,
@@ -20,40 +17,41 @@ a:active {
 
 .navLinks {
   color: #a5efed;
-  font-size: 1.3rem;
+  font-size: 1.3em;
   text-decoration: none;
+  margin-bottom: 1rem;
 }
 
 header {
   background-color: #2a4494;
   width: 100%;
-  height: 150px;
+  height: 9.375em;
   align-items: center;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 3.5em;
   text-decoration: none !important;
 }
 
 header h1 {
   color: aliceblue;
   text-decoration: none !important;
-  font-size: 2.5rem !important;
+  font-size: 2.5em !important;
   margin-top: 0 !important;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   margin-top: 0;
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   align-items: center;
   text-align: center;
 }
 
 h3 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   align-items: center;
   text-align: center;
   color: aliceblue;
@@ -64,11 +62,20 @@ h4 {
   font-size: 1.3rem;
 }
 
+.title {
+  font-size: 1.2em;
+}
+
+.bold-p {
+  font-weight: bold;
+}
+
 .button-primary {
   background-color: #2a4494;
   color: aliceblue;
-  padding: 15px;
-  margin-top: 20px;
+  padding: 0.8em;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
   align-self: center;
   border-radius: 50px;
   border: #a5efed;
@@ -77,32 +84,40 @@ h4 {
 .button-secondary {
   background-color: #10626d;
   color: aliceblue;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 0.625em;
+  margin-top: 1.25em;
   border-radius: 50px;
   border: #a5efed;
   align-self: center;
+}
+
+.delete-button {
+  justify-content: center;
+  align-items: center;
 }
 .addSong {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 0.625em;
+  padding-top: 3.125em;
+  padding-bottom: 3.125em;
   background-color: #cff1f0;
   max-width: 50%;
-  min-height: 300px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  min-height: 18.75rem;
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
   margin: 0 auto;
   border-radius: 10px;
+}
+
+.addSongForm {
+  padding: 1em;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  padding: 30px;
   min-width: 60%;
   background-color: white;
   border-radius: 10px;
@@ -110,16 +125,17 @@ form {
 
 .addSongSubmitMessage {
   color: black;
-  padding: 15px;
-  margin-top: 20px;
+  padding: 0.94em;
+  margin-top: 1.25em;
   align-self: center;
 }
 
 .noResultMsg {
-  color: black;
-  padding: 15px;
-  margin-top: 20px;
+  color: aliceblue;
+  padding: 0.94em;
+  margin-top: 1.25em;
   align-self: center;
+  font-size: 1em;
 }
 
 label {
@@ -135,27 +151,33 @@ input {
 
 select {
   min-width: 100%;
-  padding: 3px;
+  padding: 0.19em;
+}
+
+.headingPlaylist {
+  color: aliceblue;
 }
 
 .songsPlaylist {
   background-color: #2a4494;
-  padding: 10px;
-  margin: 20px;
+  padding: 0.625rem;
+  margin: 1.25rem;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 1.25rem;
   border-radius: 10px;
 }
 
 .filters {
   background-color: #0d2673;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-radius: 10px;
-  margin: 20px;
-  gap: 10px;
+  margin: 1.25em;
+  gap: 0.625em;
   max-height: fit-content;
+  padding: 1.25em;
 }
 
 .filter {
@@ -164,7 +186,7 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 1.25em;
 }
 
 .songList {
@@ -172,19 +194,24 @@ select {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 30px;
+  padding: 1.875em;
   list-style: none;
   border-radius: 10px;
-  margin: 20px;
+  margin: 1.25em;
+  justify-content: center;
+  align-items: center;
 }
 
 .song {
   background-color: white;
-  padding: 50px;
-  border-radius: 40px;
-  margin: 20px;
-  margin-top: 20px;
-  min-width: 500px;
+  padding: 3.125em;
+  border-radius: 2.5rem;
+  margin: 1.25em;
+  margin-top: 1.25em;
+  min-width: 15rem;
+  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .songDetailsBox {
@@ -192,13 +219,69 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .songDetails {
   list-style: none;
-  padding: 10px;
+  padding: 0.63em;
 }
 
-.title {
-  font-size: 1rem;
+.updateGenre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.38em;
+}
+
+.updateGenre form {
+  padding: 0;
+}
+.updateGenre label {
+  flex: 1;
+  margin-top: 5px;
+}
+
+.updateGenre input {
+  flex: 2;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.updateGenre button {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+/* Medium screens (tablets and small laptops) */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .navLinks {
+    font-size: 1em;
+  }
+  .songsPlaylist {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+  .filters {
+    padding: 1.5em;
+  }
+  .filter {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0.2rem;
+  }
 }

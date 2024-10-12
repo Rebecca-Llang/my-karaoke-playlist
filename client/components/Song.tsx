@@ -18,8 +18,14 @@ export function Song({ id, title, artist, genre, decade }: Props) {
   }
   return (
     <div key={id} className="song">
-      <li className="title">{`${title} by ${artist}`}</li>
-      <button onClick={handleClick} className="button-secondary">
+      <li className="title">
+        <span className="bold-p">{`${title}`}</span> by {`${artist}`}
+      </li>
+      <button
+        onClick={handleClick}
+        className="button-secondary"
+        id="songDetails"
+      >
         Details
       </button>
       {showDetails && (

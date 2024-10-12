@@ -22,7 +22,7 @@ export default function UpdateGenre({ songId, newGenre }: Props) {
   return (
     <>
       <form className="form" onSubmit={handleSubmit} aria-label="Update Genre">
-        <div>
+        <div className="updateGenre">
           <label htmlFor="updateGenre">Change Genre : </label>
           <input
             className="form__input"
@@ -32,10 +32,11 @@ export default function UpdateGenre({ songId, newGenre }: Props) {
             value={genre}
             onChange={onChangeHandle}
           />
+
+          <button type="submit" className="button-primary" id="updateGenre">
+            Update
+          </button>
         </div>
-        <button type="submit" className="button-secondary">
-          Update Genre
-        </button>
       </form>
     </>
   )

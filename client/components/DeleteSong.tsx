@@ -26,7 +26,7 @@ function DeleteSong({ deleteId }: Props) {
     <>
       <button
         onClick={handleClick}
-        className="button-secondary"
+        className="button-primary delete-button"
         id="deleteSong"
       >
         Delete Song
