@@ -40,6 +40,5 @@ export async function updateGenre(id: number, newGenre: string) {
     .patch(`/api/v1/songs/${id}`)
     .send({ genre: newGenre })
   console.log(result.statusCode)
-  console.log('front api', newGenre)
   return
 }

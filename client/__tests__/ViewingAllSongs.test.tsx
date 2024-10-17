@@ -1,11 +1,11 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest'
-import { renderRoute } from './Setup.tsx'
+import { renderRoute } from './Setup'
 import { screen } from '@testing-library/react'
 
 import nock from 'nock'
 
-const playlistSongs = [
+const mockPlaylistSongs = [
   {
     id: 1,
     title: 'I Wanna Dance With Somebody (Who Loves Me)',
@@ -46,7 +46,9 @@ describe('Viewing all songs on My Playlist page', () => {
 
   it('shows heading for My Songs'),
     async () => {
-      nock('http://localhost').get('/api/v1/songs').reply(200, playlistSongs)
+      nock('http://localhost')
+        .get('/api/v1/songs')
+        .reply(200, mockPlaylistSongs)
       // Arrange
       const screen = renderRoute('/songs')
       // Act
@@ -60,13 +62,15 @@ describe('Viewing all songs on My Playlist page', () => {
 
   it('shows a list of all songs on playlist'),
     async () => {
-      nock('http://localhost').get('/api/v1/songs').reply(200, playlistSongs)
+      nock('http://localhost')
+        .get('/api/v1/songs')
+        .reply(200, mockPlaylistSongs)
       // Arrange
       renderRoute('/songs')
       // Act
       await screen.findByRole('heading', { name: 'My Songs' })
       // Assert
-      playlistSongs.forEach((song) => {
+      mockPlaylistSongs.forEach((song) => {
         const songElement = screen.getByText(song.title)
         expect(songElement).toBeInTheDocument()
       })

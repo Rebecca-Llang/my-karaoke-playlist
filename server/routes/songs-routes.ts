@@ -20,6 +20,7 @@ router.get('/:id', async (req, res) => {
   const id = Number(req.params.id)
   try {
     const song = await db.getSongById(id)
+
     res.json(song)
   } catch (error) {
     console.error(`database error: ${error}`)

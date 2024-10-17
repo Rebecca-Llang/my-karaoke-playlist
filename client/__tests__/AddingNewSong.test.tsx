@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest'
 import { within, waitFor } from '@testing-library/react'
-import { renderRoute } from './Setup.tsx'
+import { renderRoute } from './Setup'
 import nock from 'nock'
 import { StatusCodes } from 'http-status-codes'
 

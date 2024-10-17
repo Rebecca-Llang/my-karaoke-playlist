@@ -10,6 +10,7 @@ export async function seed(knex) {
   await knex('songs').del()
   await knex('songs').insert([
     {
+      id: 1,
       title: 'I Wanna Dance With Somebody (Who Loves Me)',
       artist: 'Whitney Houston',
       genre: 'Pop',
@@ -17,6 +18,7 @@ export async function seed(knex) {
     },
 
     {
+      id: 2,
       title: 'Rolling in the Deep',
       artist: 'Adele',
       genre: 'Pop/Soul',
@@ -24,6 +26,7 @@ export async function seed(knex) {
     },
 
     {
+      id: 3,
       title: 'Total Eclipse of the Heart',
       artist: 'Bonnie Tyler',
       genre: 'Pop/Rock',
@@ -31,6 +34,7 @@ export async function seed(knex) {
     },
 
     {
+      id: 4,
       title: 'Never Gonna Give You Up',
       artist: 'Rick Astley',
       genre: 'Pop',
@@ -38,24 +42,28 @@ export async function seed(knex) {
     },
 
     {
+      id: 5,
       title: 'Wrecking Ball',
       artist: ' Miley Cyrus',
       genre: 'Pop',
       decade: '2010',
     },
     {
+      id: 6,
       title: 'Bohemian Rhapsody',
       artist: 'Queen',
       genre: 'Rock',
       decade: '1970',
     },
     {
+      id: 7,
       title: 'Mr. Brightside',
       artist: 'The Killers',
       genre: 'Rock',
       decade: '2000',
     },
     {
+      id: 8,
       title: 'Don’t Stop Believin’',
       artist: 'Journey',
       genre: 'Rock',

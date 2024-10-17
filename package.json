@@ -14,10 +14,11 @@
     "build:client": "vite build",
     "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts",
     "test": "vitest",
+    "test:run": "vitest run",
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
-  },
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}"
+    },
   "keywords": [
     "fullstack"
   ],
@@ -52,6 +53,7 @@
     "@types/superagent": "^8.1.1",
     "@types/supertest": "^6.0.2",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^2.1.2",
     "esbuild": "^0.19.0",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1",
@@ -73,7 +75,7 @@
     "tsx": "^3.12.7",
     "typescript": "^5.3.3",
     "vite": "^5.0.0",
-    "vitest": "^1.2.0"
+    "vitest": "^2.1.2"
   },
   "prettier": {
     "semi": false,

@@ -9,15 +9,26 @@ export function getAllSongs(): Promise<Song[]> {
 }
 
 // getSongById(id) for db route
-export function getSongById(id: number): Promise<Song> {
-  return db('songs')
-    .where({ id })
-    .select('id', 'title', 'artist', 'genre', 'decade')
-    .first() //will only return one Song object and not a array of songs
+export async function getSongById(id: number) {
+  try {
+    const song = await db('songs')
+      .select('id', 'title', 'artist', 'genre', 'decade')
+      .where({ id })
+      .first()
+
+    if (!song) {
+      throw new Error(`Song with ID ${id} not found`)
+    }
+
+    return song
+  } catch (error) {
+    console.error(`Error fetching song by ID: ${error}`)
+    throw error
+  }
 }
 
 // addSong(newSong) for db route
-export function addSong(newSong: NewSong) {
+export function addSong(newSong: NewSong): Promise<NewSong> {
   return db('songs').insert(newSong)
 }
 
@@ -28,10 +39,5 @@ export function deleteSong(id: number) {
 
 //updateGenre(id) for db route
 export function updateGenre(id: number, newGenre: string) {
-  console.log(newGenre)
-  return db('songs')
-    .where({ id })
-    .select('genre')
-
-    .update('genre', newGenre)
+  return db('songs').where({ id }).select('genre').update('genre', newGenre)
 }

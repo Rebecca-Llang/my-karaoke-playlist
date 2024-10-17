@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest'
-import { renderRoute } from './Setup.tsx'
+import { renderRoute } from './Setup'
 import { waitFor, waitForElementToBeRemoved } from '@testing-library/react/pure'
 import nock from 'nock'
 
