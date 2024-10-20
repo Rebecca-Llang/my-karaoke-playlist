@@ -44,7 +44,7 @@ router.delete('/:id', async (req, res) => {
   const id = Number(req.params.id)
   try {
     await db.deleteSong(id)
-    res.sendStatus(200)
+    res.sendStatus(204)
   } catch (error) {
     console.error(`database error: ${error}`)
     res.sendStatus(500)

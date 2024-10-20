@@ -75,3 +75,20 @@ describe('adding song', () => {
     expect(allSongsLength).toStrictEqual(initialSongsLength + 1)
   })
 })
+
+describe('deleting a song', () => {
+  it('deletes a record in the db of the song selected', async () => {
+    const initialSongs = await request(server).get('/api/v1/songs')
+    const initialSongsLength = initialSongs.body.length
+
+    const res = await request(server).get('/api/v1/songs/1')
+    expect(res.status).toBe(StatusCodes.OK)
+
+    const deleteRes = await request(server).delete('/api/v1/songs/1')
+    expect(deleteRes.status).toBe(StatusCodes.NO_CONTENT)
+
+    const allSongs = await request(server).get('/api/v1/songs')
+    const afterDeletedLength = allSongs.body.length
+    expect(afterDeletedLength).toStrictEqual(initialSongsLength - 1)
+  })
+})
