@@ -15,11 +15,21 @@ a:active {
   text-decoration: none;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: -2rem;
+  padding-bottom: 1rem;
+}
+
 .navLinks {
   color: #a5efed;
-  font-size: 1.3em;
+  font-size: 1.1em;
   text-decoration: none;
-  margin-bottom: 1rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+  margin-top: 0;
 }
 
 header {

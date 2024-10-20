@@ -8,10 +8,17 @@ export default function NavBar() {
           <h1 className="header h1">My Karaoke Playlist</h1>
         </NavLink>
       </div>
-      <div>
-        <NavLink to="/songs" className="navLinks">
-          <p>View My Playlist</p>
-        </NavLink>
+      <div className="navbar">
+        <div className="navLinks">
+          <NavLink to="/" className="navLinks">
+            <p>Add New Song</p>
+          </NavLink>
+        </div>
+        <div className="navLinks">
+          <NavLink to="/songs" className="navLinks">
+            <p>View My Playlist</p>
+          </NavLink>
+        </div>
       </div>
     </>
   )
