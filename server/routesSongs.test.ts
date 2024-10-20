@@ -2,6 +2,7 @@ import { describe, it, expect, beforeAll, beforeEach, afterAll } from 'vitest'
 import connection from './db/connection'
 import request from 'supertest'
 import server from './server'
+import { StatusCodes } from 'http-status-codes'
 
 beforeAll(async () => {
   await connection.migrate.latest()
@@ -48,5 +49,29 @@ describe('getting song by id', () => {
       genre: 'Pop/Soul',
       decade: 2010,
     })
+  })
+})
+
+describe('adding song', () => {
+  it('creates a new record in the db of the song added', async () => {
+    const initialSongs = await request(server).get('/api/v1/songs')
+    const initialSongsLength = initialSongs.body.length
+
+    const res = await request(server).post('/api/v1/songs').send({
+      title: 'Ain’t No Mountain High Enough',
+      artist: 'Marvin Gaye and Tammi Terrell',
+      genre: 'R&B/Soul',
+      decade: 1960,
+    })
+
+    expect(res.status).toBe(StatusCodes.CREATED)
+
+    const allSongs = await request(server).get('/api/v1/songs')
+    const allSongsLength = allSongs.body.length
+
+    const songTitle = allSongs.body[allSongs.body.length - 1].title
+    expect(songTitle).toStrictEqual('Ain’t No Mountain High Enough')
+
+    expect(allSongsLength).toStrictEqual(initialSongsLength + 1)
   })
 })

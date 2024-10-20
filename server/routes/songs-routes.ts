@@ -20,7 +20,6 @@ router.get('/:id', async (req, res) => {
   const id = Number(req.params.id)
   try {
     const song = await db.getSongById(id)
-
     res.json(song)
   } catch (error) {
     console.error(`database error: ${error}`)
@@ -33,7 +32,7 @@ router.post('/', async (req, res) => {
   const newSong = req.body // sets request as body of the newSong
   try {
     await db.addSong(newSong)
-    res.sendStatus(200)
+    res.sendStatus(201)
   } catch (error) {
     console.error(`database error: ${error}`)
     res.sendStatus(500)
