@@ -50,9 +50,13 @@ describe('getting song by id', () => {
       decade: 2010,
     })
   })
+  it('responds with error if song not found', async () => {
+    const res = await request(server).get('/api/v1/songs/0')
+    expect(res.statusCode).toBe(500)
+  })
 })
 
-describe('adding song', () => {
+describe('posting a new song', () => {
   it('creates a new record in the db of the song added', async () => {
     const initialSongs = await request(server).get('/api/v1/songs')
     const initialSongsLength = initialSongs.body.length

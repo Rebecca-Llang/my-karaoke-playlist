@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const songs = await db.getAllSongs()
     res.json(songs)
   } catch (error) {
-    console.error(`database error: ${error}`)
+    console.error(`database ${error}`)
     res.sendStatus(500)
   }
 })
@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
     const song = await db.getSongById(id)
     res.json(song)
   } catch (error) {
-    console.error(`database error: ${error}`)
+    console.error(`database ${error}`)
     res.sendStatus(500)
   }
 })
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
     await db.addSong(newSong)
     res.sendStatus(201)
   } catch (error) {
-    console.error(`database error: ${error}`)
+    console.error(`database ${error}`)
     res.sendStatus(500)
   }
 })
@@ -46,7 +46,7 @@ router.delete('/:id', async (req, res) => {
     await db.deleteSong(id)
     res.sendStatus(204)
   } catch (error) {
-    console.error(`database error: ${error}`)
+    console.error(`database ${error}`)
     res.sendStatus(500)
   }
 })
@@ -60,7 +60,7 @@ router.patch('/:id', async (req, res) => {
     await db.updateGenre(id, genre)
     res.sendStatus(200)
   } catch (error) {
-    console.error(`database error: ${error}`)
+    console.error(`database ${error}`)
     res.sendStatus(500)
   }
 })
