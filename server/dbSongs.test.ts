@@ -21,11 +21,26 @@ const mockNewSong = {
   decade: 1980,
 }
 
+const existingSong = {
+  id: 2,
+  title: 'Rolling in the Deep',
+  artist: 'Adele',
+  genre: 'Pop/Soul',
+  decade: 2010,
+}
+
 describe('db.getAllSongs()', () => {
   it('gets all of the songs', async () => {
     const songs = await db.getAllSongs()
-
     expect(songs).toHaveLength(21)
+    expect(songs[1]).toStrictEqual(existingSong)
+  })
+})
+
+describe('db.getSongById()', () => {
+  it('should return the correct Song object when a valid ID is provided', async () => {
+    const song = await db.getSongById(2)
+    expect(song).toStrictEqual(existingSong)
   })
 })
 
@@ -33,21 +48,12 @@ describe('db.addSong()', () => {
   it('adds a new song to the db', async () => {
     await db.addSong(mockNewSong)
     const allSongs = await db.getAllSongs()
-    const latestSong = allSongs.pop()
+    const latestSong = allSongs.find((song) => song.title === mockNewSong.title)
 
-    expect(latestSong?.artist).toBe('Madonna')
-  })
-})
-
-describe('getSongById', () => {
-  it('should return the correct Song object when a valid ID is provided', async () => {
-    const song = await db.getSongById(2)
-    expect(song).toStrictEqual({
-      id: 2,
-      title: 'Rolling in the Deep',
-      artist: 'Adele',
-      genre: 'Pop/Soul',
-      decade: 2010,
-    })
+    expect(latestSong).toBeDefined()
+    expect(latestSong?.artist).toBe(mockNewSong.artist)
+    expect(latestSong?.title).toBe(mockNewSong.title)
+    expect(latestSong?.genre).toBe(mockNewSong.genre)
+    expect(latestSong?.decade).toBe(mockNewSong.decade)
   })
 })
