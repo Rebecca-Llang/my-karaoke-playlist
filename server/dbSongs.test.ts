@@ -73,3 +73,16 @@ describe('db.deleteSong()', () => {
     expect(allSongs.length).toStrictEqual(initialSongsLength - 1)
   })
 })
+
+describe('db.updateGenre()', () => {
+  it('updates genre of selected song', async () => {
+    const song = await db.getSongById(2)
+    expect(song.genre).toStrictEqual(existingSong.genre)
+
+    const newGenre = 'Soul'
+    await db.updateGenre(2, newGenre)
+
+    const updatedSong = await db.getSongById(2)
+    expect(updatedSong.genre).toStrictEqual(newGenre)
+  })
+})
