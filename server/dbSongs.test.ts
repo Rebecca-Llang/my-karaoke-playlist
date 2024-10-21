@@ -57,3 +57,19 @@ describe('db.addSong()', () => {
     expect(latestSong?.decade).toBe(mockNewSong.decade)
   })
 })
+
+describe('db.deleteSong()', () => {
+  it('deletes the selected song', async () => {
+    const initialSongs = await db.getAllSongs()
+    const initialSongsLength = initialSongs.length
+
+    const song = await db.getSongById(2)
+    expect(song).toStrictEqual(existingSong)
+
+    await db.deleteSong(2)
+
+    const allSongs = await db.getAllSongs()
+
+    expect(allSongs.length).toStrictEqual(initialSongsLength - 1)
+  })
+})
