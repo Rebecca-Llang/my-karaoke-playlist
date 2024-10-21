@@ -81,8 +81,8 @@ describe('deleting a song', () => {
     const initialSongs = await request(server).get('/api/v1/songs')
     const initialSongsLength = initialSongs.body.length
 
-    const res = await request(server).get('/api/v1/songs/1')
-    expect(res.status).toBe(StatusCodes.OK)
+    const songRes = await request(server).get('/api/v1/songs/1')
+    expect(songRes.status).toBe(StatusCodes.OK)
 
     const deleteRes = await request(server).delete('/api/v1/songs/1')
     expect(deleteRes.status).toBe(StatusCodes.NO_CONTENT)
@@ -90,5 +90,24 @@ describe('deleting a song', () => {
     const allSongs = await request(server).get('/api/v1/songs')
     const afterDeletedLength = allSongs.body.length
     expect(afterDeletedLength).toStrictEqual(initialSongsLength - 1)
+  })
+})
+
+describe('updating song genre', () => {
+  it('updates a song with a new genre', async () => {
+    const resSong = await request(server).get('/api/v1/songs/1')
+    expect(resSong.status).toBe(StatusCodes.OK)
+    expect(resSong.body.genre).toStrictEqual('Pop')
+
+    const newGenre = 'Ballad'
+    const updateRes = await request(server)
+      .patch('/api/v1/songs/1')
+      .send({ genre: newGenre })
+
+    expect(updateRes.status).toBe(StatusCodes.OK)
+
+    const updatedSongRes = await request(server).get('/api/v1/songs/1')
+    expect(updatedSongRes.status).toBe(StatusCodes.OK)
+    expect(updatedSongRes.body.genre).toStrictEqual(newGenre)
   })
 })
