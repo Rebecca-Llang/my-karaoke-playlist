@@ -59,6 +59,7 @@ function AddSong() {
 
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
+
     addMutation.mutate(newSong)
   }
 
@@ -87,6 +88,7 @@ function AddSong() {
                 value={newSong.title}
                 onChange={onChangeHandle}
                 placeholder="Like a Prayer"
+                required
               />
             </div>
             <div className="addSongForm">
@@ -99,6 +101,7 @@ function AddSong() {
                 value={newSong.artist}
                 onChange={onChangeHandle}
                 placeholder="Madonna"
+                required
               />
             </div>
             <div className="addSongForm">
@@ -111,6 +114,7 @@ function AddSong() {
                 value={newSong.genre}
                 onChange={onChangeHandle}
                 placeholder="Pop Rock"
+                required
               />
             </div>
             <div className="addSongForm">

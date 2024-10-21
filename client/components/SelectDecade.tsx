@@ -24,6 +24,7 @@ export default function SelectDecade({ onSelect }: SelectDecadeProps) {
         className="select"
         onChange={onDecadeSelectHandler}
         value={decade ?? ''}
+        required
       >
         <option value="" disabled>
           Select Decade
