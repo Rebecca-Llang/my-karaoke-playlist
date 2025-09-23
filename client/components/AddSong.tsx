@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { NewSong } from '../../models/songs'
 import { addSong } from '../apis/songsAPI'
-import SelectDecade from './SelectDecade'
+import DecadeSelector from './DecadeSelector'
 
 function AddSong() {
   const [newSong, setNewSong] = useState<NewSong>({
@@ -24,12 +24,7 @@ function AddSong() {
       queryClient.invalidateQueries({ queryKey: ['songs'] })
       setShowSubmitMsg(true)
 
-      setNewSong({
-        title: '',
-        artist: '',
-        genre: '',
-        decade: null,
-      })
+      setNewSong({ title: '', artist: '', genre: '', decade: null })
     },
   })
 
@@ -119,7 +114,7 @@ function AddSong() {
             </div>
             <div className="addSongForm">
               <label htmlFor="decade">Decade: </label>
-              <SelectDecade onSelect={handleDecadeSubmit} />
+              <DecadeSelector onSelect={handleDecadeSubmit} />
             </div>
             <button
               type="submit"
