@@ -5,7 +5,7 @@ export default function NavBar() {
     <>
       <div>
         <NavLink to="/">
-          <h1 className="header h1">Ok, Karaoke!</h1>
+          <h1>Ok, Karaoke!</h1>
         </NavLink>
       </div>
       <div className="navbar">
