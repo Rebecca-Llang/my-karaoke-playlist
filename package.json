@@ -2,8 +2,8 @@
   "name": "my-karaoke-playlist",
   "type": "module",
   "version": "0.1.0",
-  "description": "My first solo project post Dev Academy.",
-  "repository": "https://https://github.com/dev-academy-challenges/my-fullstack-collection",
+  "description": "A modern karaoke playlist manager built with React, TypeScript, and Express.",
+  "repository": "https://github.com/[Rebecca-Llang]/my-karaoke-playlist",
   "main": "server/index.ts",
   "scripts": {
     "start": "node dist/server.js",
@@ -20,6 +20,12 @@
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}"
   },
   "keywords": [
+    "karaoke",
+    "playlist",
+    "music",
+    "react",
+    "typescript",
+    "express",
     "fullstack"
   ],
   "author": "Rebecca Lang and Dev Academy Aotearoa",
