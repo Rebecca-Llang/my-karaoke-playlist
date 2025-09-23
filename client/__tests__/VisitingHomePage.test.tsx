@@ -5,13 +5,11 @@ import { waitFor, waitForElementToBeRemoved } from '@testing-library/react/pure'
 import nock from 'nock'
 
 describe('Shows Home page with header', () => {
-  it('shows a header with the My Karaoke Playlist', async () => {
+  it('shows a header with the site title', async () => {
     // Arrange
     const screen = renderRoute('/')
     // Act & Assert
-    const headerHeading = screen.getByRole('heading', {
-      name: 'My Karaoke Playlist',
-    })
+    const headerHeading = screen.getByRole('heading', { name: 'Ok, Karaoke!' })
     expect(headerHeading).toBeVisible()
 
     const playlistNavLink = await screen.findByRole('link', {

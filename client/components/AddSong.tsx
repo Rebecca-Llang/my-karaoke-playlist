@@ -69,7 +69,14 @@ function AddSong() {
   return (
     <>
       <div className="addSongContainer">
-        <h2>Add A New Song</h2>
+        <div className="icon">
+          <h2>Add A New Song</h2>
+          <img
+            src="/curiouspeng-min.jpg"
+            alt="Penguin"
+            className="avatar avatar--md"
+          />
+        </div>
 
         <div className="addSong">
           <form className="form" onSubmit={handleSubmit} aria-label="Add song">

@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import NavBar from './NavBar.tsx'
+import Footer from './Footer.tsx'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <section className="main">
         <Outlet />
       </section>
+      <Footer />
     </>
   )
 }

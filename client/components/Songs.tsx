@@ -57,6 +57,11 @@ function Songs() {
               onDecadeChange={(decade) => setSelectedDecade(decade)}
             />
           </div>
+          <img
+            src="/curiouspeng-min.jpg"
+            alt="Penguin"
+            className="avatar avatar--lg"
+          />
           <div className="filter">
             <h3>Filter By Genre:</h3>
             <FilterByGenre
