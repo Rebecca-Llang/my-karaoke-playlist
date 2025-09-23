@@ -1,8 +1,8 @@
 {
-  "name": "my-fullstack-collection",
+  "name": "my-karaoke-playlist",
   "type": "module",
   "version": "0.1.0",
-  "description": "Build a fullstack collection app",
+  "description": "My first solo project post Dev Academy.",
   "repository": "https://https://github.com/dev-academy-challenges/my-fullstack-collection",
   "main": "server/index.ts",
   "scripts": {
@@ -18,11 +18,11 @@
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}"
-    },
+  },
   "keywords": [
     "fullstack"
   ],
-  "author": "Dev Academy Aotearoa",
+  "author": "Rebecca Lang and Dev Academy Aotearoa",
   "license": "ISC",
   "eslintConfig": {
     "extends": "@devacademy/eslint-config/react",
@@ -53,8 +53,8 @@
     "@types/superagent": "^8.1.1",
     "@types/supertest": "^6.0.2",
     "@vitejs/plugin-react": "^4.2.1",
-    "@vitest/coverage-v8": "^2.1.2",
-    "esbuild": "^0.19.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "esbuild": "^0.25.10",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -74,8 +74,8 @@
     "supertest": "^6.3.4",
     "tsx": "^3.12.7",
     "typescript": "^5.3.3",
-    "vite": "^5.0.0",
-    "vitest": "^2.1.2"
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
   },
   "prettier": {
     "semi": false,

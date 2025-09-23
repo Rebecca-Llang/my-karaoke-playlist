@@ -1,3 +1,13 @@
+/* Simple CSS Variables - just the colors */
+:root {
+  --primary: #4c1d95;
+  --secondary: #3b82f6;
+  --accent: #5eead4;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --text: #64748b;
+}
+
 body {
   position: absolute;
   top: 0;
@@ -6,6 +16,7 @@ body {
   width: 100%;
   font: 0.875rem;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--light);
 }
 
 a,
@@ -24,7 +35,7 @@ a:active {
 }
 
 .navLinks {
-  color: #a5efed;
+  color: var(--accent);
   font-size: 1.1em;
   text-decoration: none;
   padding-right: 0.8rem;
@@ -33,7 +44,7 @@ a:active {
 }
 
 header {
-  background-color: #2a4494;
+  background-color: var(--primary);
   width: 100%;
   height: 9.375em;
   align-items: center;
@@ -43,7 +54,7 @@ header {
 }
 
 header h1 {
-  color: aliceblue;
+  color: white;
   text-decoration: none !important;
   font-size: 2.5em !important;
   margin-top: 0 !important;
@@ -58,19 +69,20 @@ h2 {
   font-size: 2rem;
   align-items: center;
   text-align: center;
-  color: #0d2673;
+  color: var(--dark);
 }
 
 h3 {
   font-size: 1.5rem;
   align-items: center;
   text-align: center;
-  color: aliceblue;
+  color: white;
 }
 
 h4 {
-  color: #a5efed;
+  color: var(--accent);
   font-size: 1.3rem;
+  text-shadow: 0 0 1px var(--accent);
 }
 
 .title {
@@ -82,23 +94,23 @@ h4 {
 }
 
 .button-primary {
-  background-color: #2a4494;
-  color: aliceblue;
+  background-color: var(--primary);
+  color: white;
   padding: 0.8em;
   margin-top: 1.25em;
   margin-bottom: 1em;
   align-self: center;
   border-radius: 50px;
-  border: #a5efed;
+  border: 2px solid var(--accent);
 }
 
 .button-secondary {
-  background-color: #10626d;
-  color: aliceblue;
+  background-color: var(--secondary);
+  color: white;
   padding: 0.625em;
   margin-top: 1.25em;
   border-radius: 50px;
-  border: #a5efed;
+  border: 2px solid var(--accent);
   align-self: center;
 }
 
@@ -108,8 +120,8 @@ h4 {
 }
 
 .addSongContainer {
-  border: 2px solid #2a4494;
-  box-shadow: 0 0 2px #68d0cc;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 2px var(--accent);
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 10px;
@@ -121,7 +133,7 @@ h4 {
   padding: 0.625em;
   padding-top: 3.125em;
   padding-bottom: 3.125em;
-  background-color: #cff1f0;
+  background-color: var(--light);
   max-width: 50%;
   min-height: 18.75rem;
   margin-top: 0.625em;
@@ -152,7 +164,7 @@ form {
 }
 
 .noResultMsg {
-  color: aliceblue;
+  color: var(--text);
   padding: 0.94em;
   margin-top: 1.25em;
   align-self: center;
@@ -176,8 +188,8 @@ select {
 }
 
 .songsPlaylist {
-  border: 2px solid #2a4494;
-  box-shadow: 0 0 2px #68d0cc;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 2px var(--accent);
   padding: 0.625rem;
   margin: 1.25rem;
   display: flex;
@@ -187,7 +199,7 @@ select {
 }
 
 .filters {
-  background-color: #0d2673;
+  background-color: var(--dark);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -208,7 +220,7 @@ select {
 }
 
 .songList {
-  background-color: #cff1f0;
+  background-color: var(--light);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
