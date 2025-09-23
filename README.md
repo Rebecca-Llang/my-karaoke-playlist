@@ -19,7 +19,7 @@ A modern full‑stack web app to manage your karaoke playlist. Add songs, filter
 ## Setup ✅
 
 ```bash
-git clone https://github.com/[your-username]/my-karaoke-playlist
+git clone https://github.com/rebecca-llang/my-karaoke-playlist
 cd my-karaoke-playlist
 npm install
 npm run dev
