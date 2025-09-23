@@ -1,5 +1,5 @@
-import DeleteSong from './DeleteSong'
-import UpdateGenre from './UpdateGenre'
+import DeleteSongButton from './DeleteSongButton'
+import GenreEditor from './GenreEditor'
 
 interface Props {
   id: number
@@ -27,8 +27,8 @@ function SongDetails({ id, title, artist, genre, decade }: Props) {
         </li>
       </ul>
 
-      <UpdateGenre songId={id} newGenre={genre} />
-      <DeleteSong deleteId={id} />
+      <GenreEditor songId={id} newGenre={genre} />
+      <DeleteSongButton deleteId={id} />
     </>
   )
 }

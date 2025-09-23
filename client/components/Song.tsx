@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SongDetails from './SongDetails'
+import SongDetailsPanel from './SongDetailsPanel'
 
 interface Props {
   id: number
@@ -29,7 +29,7 @@ export function Song({ id, title, artist, genre, decade }: Props) {
         Details
       </button>
       {showDetails && (
-        <SongDetails
+        <SongDetailsPanel
           id={id}
           title={title}
           artist={artist}

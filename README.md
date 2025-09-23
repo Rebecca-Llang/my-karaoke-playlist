@@ -1,35 +1,44 @@
 # My Karaoke Playlist 🎤
 
-My Karaoke Playlist is a fun and interactive full-stack web app that allows users to create and manage their karaoke set-list. Users can easily add songs to their playlist via a form, update the genre of the song, and delete songs when needed. This app makes it easy to keep track of your ballads for your next karaoke adventure!
+A modern full‑stack web app to manage your karaoke playlist. Add songs, filter by decade/genre, update genres, and remove songs. Clean, responsive UI with a focus on simplicity.
 
 ## Features ✨
-- Add Songs: Fill in a form with song details and add them to your personal karaoke playlist.
-- Update Genre: Edit the genre of any song in your playlist.
-- Delete Songs: Remove any song from your playlist if you no longer need it.
-- Filter Songs: Ability to filter playlist by genre and decade
+- Add songs with title, artist, genre, and decade
+- View playlist in a responsive grid
+- Filter by decade and genre (client-side)
+- Update a song's genre inline
+- Delete songs
 
-## Tech Stack 🖥️
-Frontend: React, React Router for navigation, CSS for styling
-Backend: Node.js, Express for server-side logic
-Database: SQLite3 via Knex for database management
-
-## Future Plans 💃
-- Add higher unit testing coverage
+## Tech Stack 🛠️
+- Frontend: React 18, TypeScript, React Router, React Query, Vite
+- Styling: CSS with a small set of custom properties and Google Fonts (Poppins, Inter, Fredoka)
+- Backend: Node.js, Express
+- Database: SQLite3 with Knex.js
+- Testing: Vitest, Testing Library
 
 ## Setup ✅
 
-To get started with the project, follow these instructions:
-
-#### **From the GitHub UI**
-
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use GitHub's feature to create a new repo from a template.
-
-#### **From the command line**
-
 ```bash
-git clone https://github.com/[your-username]/my-karaoke-playlist 
+git clone https://github.com/rebecca-llang/my-karaoke-playlist
 cd my-karaoke-playlist
-npm install # to install dependencies
-npm run dev # to start the dev server
+npm install
+npm run dev
 ```
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
+
+## Project Structure 📁
+
+```
+my-karaoke-playlist/
+├── client/
+│   ├── components/        # UI components (AddSong, Songs, Song, etc.)
+│   ├── apis/              # API client (songsAPI)
+│   └── styles/            # Global CSS
+├── server/
+│   ├── routes/            # Express routes (songs)
+│   └── db/                # Knex config, migrations, seeds
+└── models/                # TypeScript interfaces (Song, NewSong)
+```
+
+## Notes & Future Work 🗒️
+- Improve test coverage
+- Deployment: Docker/Vercel/Render not configured yet

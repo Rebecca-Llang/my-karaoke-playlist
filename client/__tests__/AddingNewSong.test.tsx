@@ -88,50 +88,49 @@ describe('Adding a new song to the playlist', () => {
     )
   })
 
-  it('throws an error when adding a new song fails'),
-    async () => {
-      nock('http://localhost').get('/api/v1/songs').reply(200, initialSongs)
+  it('throws an error when adding a new song fails', async () => {
+    nock('http://localhost').get('/api/v1/songs').reply(200, initialSongs)
 
-      const newSong = {
-        title: 'Like a Prayer',
-        artist: 'Madonna',
-        genre: 'Pop Rock',
-        decade: 1980,
-      }
-
-      nock('http://localhost')
-        .post('/api/v1/songs', newSong)
-        .reply(StatusCodes.INTERNAL_SERVER_ERROR, { message: 'Server error' })
-
-      const { user, ...screen } = renderRoute('/')
-
-      // Act & Assert
-      const form = await screen.findByRole('form', { name: 'Add song' })
-
-      const titleInput = await within(form).findByLabelText('Song Title:')
-      await user.clear(titleInput)
-      await user.type(titleInput, newSong.title)
-
-      const artistInput = await within(form).findByLabelText('Artist Name:')
-      await user.type(artistInput, newSong.artist)
-
-      const genreInput = await within(form).findByLabelText('Genre:')
-      await user.type(genreInput, newSong.genre)
-
-      const decadeInput = await within(form).findByLabelText('Decade:')
-      await user.selectOptions(decadeInput, newSong.decade.toString())
-
-      const submitButton = await within(form).findByRole('button', {
-        name: 'Add to My Playlist',
-      })
-      await user.click(submitButton)
-
-      await waitFor(
-        () => {
-          const errorMsg = screen.getByText('Oh no! Error adding song:')
-          expect(errorMsg).toBeInTheDocument()
-        },
-        { timeout: 2000 },
-      )
+    const newSong = {
+      title: 'Like a Prayer',
+      artist: 'Madonna',
+      genre: 'Pop Rock',
+      decade: 1980,
     }
+
+    nock('http://localhost')
+      .post('/api/v1/songs', newSong)
+      .reply(StatusCodes.INTERNAL_SERVER_ERROR, { message: 'Server error' })
+
+    const { user, ...screen } = renderRoute('/')
+
+    // Act & Assert
+    const form = await screen.findByRole('form', { name: 'Add song' })
+
+    const titleInput = await within(form).findByLabelText('Song Title:')
+    await user.clear(titleInput)
+    await user.type(titleInput, newSong.title)
+
+    const artistInput = await within(form).findByLabelText('Artist Name:')
+    await user.type(artistInput, newSong.artist)
+
+    const genreInput = await within(form).findByLabelText('Genre:')
+    await user.type(genreInput, newSong.genre)
+
+    const decadeInput = await within(form).findByLabelText('Decade:')
+    await user.selectOptions(decadeInput, newSong.decade.toString())
+
+    const submitButton = await within(form).findByRole('button', {
+      name: 'Add to My Playlist',
+    })
+    await user.click(submitButton)
+
+    await waitFor(
+      () => {
+        const errorMsg = screen.getByText(/Oh no! Error adding song/i)
+        expect(errorMsg).toBeInTheDocument()
+      },
+      { timeout: 2000 },
+    )
+  })
 })
